@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Email Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <label>
+      <input type="checkbox" id="themeSwitch" />
+      <span>🌗 Toggle Theme</span>
+    </label>
+  </div>
+
+  
+  <div class="wrapper">
+    <div class="card">
+      <h1>📧 Smart Email Generator</h1>
+      <p class="tagline">Type or Speak your topic to get a full email instantly!</p>
+
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <textarea id="prompt" placeholder="e.g. Request for internship, leave application..."></textarea>
+        <button id="speakBtn">🎙️ Speak</button>
+      </div>
+
+      <button id="generateBtn">✍️ Generate Email</button>
+
+      <div class="output-box" id="outputBox">
+        <h3>Generated Email:</h3>
+        <textarea id="emailOutput" rows="10">Your email will appear here...</textarea>
+        <div class="btn-group">
+          <button onclick="copyEmail()">📋 Copy</button>
+          <button onclick="downloadPDF()">📥 PDF</button>
+        </div>
+      </div>
+    </div>
+
+   
+    <div class="team-box">
+      <h3>👥 Team Members</h3>
+      <ul>
+        <li>👨‍💻SHAIK IRFAN </li>
+        <li>👩‍💻AMEY RATHORE </li>
+        <li>🧑‍💻AKSHAT SINGH </li>
+        <li>🧑‍💻ADARSH KUMAR</li>
+        <li>🧑‍💻ANMOL SHARMA</li>
+        <li>🧑‍💻ARPITA</li>
+      </ul>
+    </div>
+  </div>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+   
+    const switcher = document.getElementById("themeSwitch");
+    switcher.addEventListener("change", () => {
+      document.body.classList.toggle("dark", switcher.checked);
+    });
+  </script>
+</body>
+</html>
